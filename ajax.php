@@ -31,7 +31,6 @@ if (isset($_POST['status'])) {
 
 }
 
-
 mysqli_close($link);
 echo json_encode($tasks);
 ?>
