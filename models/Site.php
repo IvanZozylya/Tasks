@@ -51,21 +51,20 @@ class Site
     }
 
     //Добавление новой task
-    public static function addNewTask($name, $email, $text, $img, $status)
+    public static function addNewTask($name, $email, $text)
     {
 
         $db = Db::getConnection();
-        $sth = $db->prepare('INSERT INTO tasks (`name`,`email`,`text`,`img`,`status`) VALUES (:name,:email,:text,:img,:status)');
+        $sth = $db->prepare('INSERT INTO tasks (`name`,`email`,`text`) VALUES (:name,:email,:text)');
         $params = array(
             'name' => $name,
             'email' => $email,
             'text' => $text,
-            'img' => $img,
-            'status' => $status,
         );
         $sth->execute($params);
 
-        return $lastId = $db->lastInsertId();
+        $lastId = $db->lastInsertId();
+        return $lastId != 0 ? $lastId : false;
 
     }
 
