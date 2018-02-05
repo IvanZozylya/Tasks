@@ -5,8 +5,8 @@ $(document).ready(function () {
             $('.newlist').empty();
             $(".pag").empty();
             for (var id in data) {
-                    var details = "<a href=\"/task/details/" + data[id].id + "\" class=\"hOffset\"><span\n" +
-                        "class=\"glyphicon glyphicon-search\"></span></a>";
+                var details = "<a href=\"/task/details/" + data[id].id + "\" class=\"hOffset\"><span\n" +
+                    "class=\"glyphicon glyphicon-search\"></span></a>";
                 $('.newlist').append("<tr>" +
                     "<td style=\"\">\n" +
                     "<img src='" + data[id].img + "' width='100px' height='75px' class=\"img-rounded\">\n" + "</td>" +
@@ -14,7 +14,7 @@ $(document).ready(function () {
                     "<td>" + data[id].email + "</td>" +
                     "<td>" + data[id].status + "</td>" +
                     "<td>" + data[id].text + "</td>" +
-                    "<td>"+details+"</td>"+
+                    "<td>" + details + "</td>" +
                     "</tr>");
             }
 
@@ -36,7 +36,7 @@ $(document).ready(function () {
                     "<td>" + data[id].email + "</td>" +
                     "<td>" + data[id].status + "</td>" +
                     "<td>" + data[id].text + "</td>" +
-                    "<td>"+details+"</td>"+
+                    "<td>" + details + "</td>" +
                     "</tr>");
             }
         });
@@ -57,7 +57,7 @@ $(document).ready(function () {
                     "<td>" + data[id].email + "</td>" +
                     "<td>" + data[id].status + "</td>" +
                     "<td>" + data[id].text + "</td>" +
-                    "<td>"+details+"</td>"+
+                    "<td>" + details + "</td>" +
                     "</tr>");
             }
         });

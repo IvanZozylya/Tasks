@@ -30,14 +30,29 @@ class SiteController
             $name = $_POST['userName'];
             $email = $_POST['email'];
             $text = $_POST['task'];
-            $img = '/template/image/' . basename($_FILES['userfile']['name']);
-            $uploadFile = ROOT . '/template/image/' . basename($_FILES['userfile']['name']);
+            $img = '/template/image/' . $_FILES['userfile']['name'];
 
-            //Добавляем новую task в БД
-            Site::addNewTask($name, $email, $text, $img, 0);
+
+            //Добавляем новую task в БД и получить ее id
+            $last_id = Site::addNewTask($name, $email, $text, $img, 0);
+
+            //Меняем название файла
+            $upload = explode(".", $_FILES['userfile']['name']);
+            $newFile = $last_id . ".$upload[1]";
+
+            //Путь к файлу
+            $uploadFile = ROOT . '/template/image/' . $newFile;
 
             //Перемещаем файл
-            if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadFile)) {
+            if (move_uploaded_file($_FILES['userfile']['tmp_name'],$uploadFile)) {
+
+                //Новый путь к файлу в БД
+                $image = '/template/image/' .$newFile;
+
+                //Обновить путь image нужной tasks в БД
+                Site::editPathImage($last_id,$image);
+
+                //Переадресация на главную страницу
                 header("location: /");
             }
         }

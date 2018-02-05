@@ -5,7 +5,7 @@
         <div class="col-md-5 col-sm-12">
             <div class="form-group">
                 <img id="output_image" class="center-block"/>
-                <input type="file" accept="image/jpg,gif,png" name="userfile" onchange="preview_image(event)" required>
+                <input type="file" accept="image/jpeg,image/png,image/gif" name="userfile" onchange="preview_image(event)" required>
                 <div class="alert alert-info vOffset">
                     <strong>Info! </strong>Only jpg/gif/png formats are supported. Image can have dimensions up to
                     320х240.

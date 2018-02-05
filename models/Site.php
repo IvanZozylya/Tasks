@@ -65,6 +65,7 @@ class Site
         );
         $sth->execute($params);
 
+        return $lastId = $db->lastInsertId();
 
     }
 
@@ -93,4 +94,19 @@ class Site
 
 
     }
+
+    //Обновить путь image нужной tasks
+    public static function editPathImage($id, $image)
+    {
+        $db = Db::getConnection();
+        $sth = $db->prepare('UPDATE tasks SET `img` = :image WHERE `id` = :id');
+        $params = array(
+            'id' => $id,
+            'image' => $image,
+
+        );
+        $sth->execute($params);
+
+    }
+
 }
