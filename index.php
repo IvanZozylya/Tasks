@@ -4,7 +4,7 @@
 
 // 1. Общие настройки
 ini_set('display_errors', 1);
-error_reporting(E_ALL);
+error_reporting(1);
 
 //Время жизни сессионных куки
 //session_set_cookie_params(0);

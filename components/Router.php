@@ -26,6 +26,12 @@ class Router
         //Получить строку запроса
         $uri = $this->getURI();
 
+        //Перенаправление на 404
+        if(!$this->routes[$uri]){
+            require_once ROOT . "/views/404/404.htm";
+            exit();
+        }
+
         // Проверить наличие такого запроса в routes.php
         foreach ($this->routes as $uriPattern => $path) {
 
@@ -57,9 +63,9 @@ class Router
                 $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
 
                 if ($result == false) {
-                    header("Location: /Goodbye");
                     exit();
                 }
+
                 if ($result != null) {
                     break;
                 }

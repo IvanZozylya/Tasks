@@ -10,42 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="22" column="49" lean-forward="false" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
-              <folding>
-                <element signature="n#actionIndex#0;n#SiteController#0;n#!!top" expanded="false" />
-                <element signature="n#actionCreate#0;n#SiteController#0;n#!!top" expanded="false" />
-                <element signature="n#actionEdit#0;n#SiteController#0;n#!!top" expanded="false" />
-                <element signature="n#actionDetails#0;n#SiteController#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Site.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/models/Site.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="53" column="59" lean-forward="false" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
-              <folding>
-                <element signature="n#urlVerify#0;n#Site#0;n#!!top" expanded="false" />
-                <element signature="n#getCountTasksId#0;n#Site#0;n#!!top" expanded="false" />
-                <element signature="n#getTasks#0;n#Site#0;n#!!top" expanded="false" />
-                <element signature="n#addNewTask#0;n#Site#0;n#!!top" expanded="false" />
-                <element signature="n#getShowItemTask#0;n#Site#0;n#!!top" expanded="false" />
-                <element signature="n#editTask#0;n#Site#0;n#!!top" expanded="false" />
-                <marker date="1517873120073" expanded="true" signature="1326:1395" ph="INSERT INTO tasks... " />
-                <marker date="1517873120073" expanded="true" signature="2460:2508" ph="UPDATE tasks... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,7 +26,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/components/Other.php" />
-        <option value="$PROJECT_DIR$/components/Router.php" />
         <option value="$PROJECT_DIR$/controllers/BlogController.php" />
         <option value="$PROJECT_DIR$/views/layouts/footer.php" />
         <option value="F:/BeeJee/диплом/controllers/SiteController.php" />
@@ -74,7 +38,6 @@
         <option value="$PROJECT_DIR$/views/ajax/test.php" />
         <option value="$PROJECT_DIR$/config/routes.php" />
         <option value="$PROJECT_DIR$/views/site/test.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/views/ajax/ajax.php" />
         <option value="$PROJECT_DIR$/template/css/app.css" />
@@ -95,6 +58,11 @@
         <option value="$PROJECT_DIR$/views/site/create.php" />
         <option value="$PROJECT_DIR$/models/Site.php" />
         <option value="$PROJECT_DIR$/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/views/404.php" />
+        <option value="$PROJECT_DIR$/template/css/404.css" />
+        <option value="$PROJECT_DIR$/views/404.htm" />
+        <option value="$PROJECT_DIR$/components/Router.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -134,11 +102,6 @@
               <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="localhost" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="localhost" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="template" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -155,6 +118,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\OpenServer\OSPanel\domains\localhost\views\404" />
       <recent name="F:\OpenServer\OSPanel\domains\localhost\views\ajax" />
       <recent name="F:\OpenServer\OSPanel\domains\localhost\views\site" />
     </key>
@@ -191,12 +155,12 @@
       <workItem from="1517658239931" duration="14918000" />
       <workItem from="1517676158814" duration="13849000" />
       <workItem from="1517856755178" duration="5509000" />
-      <workItem from="1517865741960" duration="6612000" />
+      <workItem from="1517865741960" duration="9329000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63390000" />
+    <option name="totallyTimeSpent" value="66107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -234,44 +198,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://F:/BeeJee/диплом/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/BeeJee/диплом/views/user/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/BeeJee/диплом/views/news/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="39" column="10" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="39" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/ajax/test.php" />
-    <entry file="file://$PROJECT_DIR$/components/Router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="58" column="39" lean-forward="true" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/test.php" />
-    <entry file="file://$PROJECT_DIR$/views/ajax/ajax.php" />
     <entry file="file://F:/BeeJee/диплом/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-500">
@@ -283,13 +209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -350,14 +269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -399,13 +310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="41" column="11" lean-forward="true" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -542,10 +446,28 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/Site.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="78" column="25" lean-forward="true" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+          <folding>
+            <element signature="n#urlVerify#0;n#Site#0;n#!!top" expanded="false" />
+            <element signature="n#getCountTasksId#0;n#Site#0;n#!!top" expanded="false" />
+            <element signature="n#getTasks#0;n#Site#0;n#!!top" expanded="false" />
+            <element signature="n#addNewTask#0;n#Site#0;n#!!top" expanded="false" />
+            <element signature="n#getShowItemTask#0;n#Site#0;n#!!top" expanded="false" />
+            <element signature="n#editTask#0;n#Site#0;n#!!top" expanded="false" />
+            <element signature="n#editPathImage#0;n#Site#0;n#!!top" expanded="false" />
+            <marker date="1517873120073" expanded="true" signature="1326:1395" ph="INSERT INTO tasks... " />
+            <marker date="1517873120073" expanded="true" signature="2460:2508" ph="UPDATE tasks... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="22" column="49" lean-forward="false" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+        <state relative-caret-position="325">
+          <caret line="104" column="27" lean-forward="false" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
           <folding>
             <element signature="n#actionIndex#0;n#SiteController#0;n#!!top" expanded="false" />
             <element signature="n#actionCreate#0;n#SiteController#0;n#!!top" expanded="false" />
@@ -555,20 +477,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Site.php">
+    <entry file="file://$PROJECT_DIR$/views/404.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="53" column="59" lean-forward="false" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
+        <state relative-caret-position="50">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/BeeJee/диплом/components/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-229">
+          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/BeeJee/диплом/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/css/404.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1525">
+          <caret line="61" column="18" lean-forward="false" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="n#urlVerify#0;n#Site#0;n#!!top" expanded="false" />
-            <element signature="n#getCountTasksId#0;n#Site#0;n#!!top" expanded="false" />
-            <element signature="n#getTasks#0;n#Site#0;n#!!top" expanded="false" />
-            <element signature="n#addNewTask#0;n#Site#0;n#!!top" expanded="false" />
-            <element signature="n#getShowItemTask#0;n#Site#0;n#!!top" expanded="false" />
-            <element signature="n#editTask#0;n#Site#0;n#!!top" expanded="false" />
-            <marker date="1517873120073" expanded="true" signature="1326:1395" ph="INSERT INTO tasks... " />
-            <marker date="1517873120073" expanded="true" signature="2460:2508" ph="UPDATE tasks... " />
+            <marker date="1517688231310" expanded="true" signature="117:154" ph="SELECT * FRO... tasks" />
+            <marker date="1517688231310" expanded="true" signature="338:376" ph="SELECT * FRO... tasks" />
+            <marker date="1517688231310" expanded="true" signature="562:601" ph="SELECT * FRO... tasks" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/404/404.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="30" column="43" lean-forward="false" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

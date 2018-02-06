@@ -31,7 +31,7 @@ class SiteController
             $email = $_POST['email'];
             $text = $_POST['task'];
             $img = '/template/image/' . $_FILES['userfile']['name'];
-            
+
             //Добавляем новую task в БД и получить ее id
             if (!$last_id = Site::addNewTask($name, $email, $text)) {
                 header("Location: /");
@@ -102,7 +102,7 @@ class SiteController
         return true;
     }
 
-    //task/details/$1
+    //Просмотр нужного task
     public function actionDetails($id, $params = false)
     {
         //Проверка id task
