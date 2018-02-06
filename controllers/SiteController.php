@@ -115,7 +115,7 @@ class SiteController
 
         if (isset($_POST['save'])) {
 
-            $status = (empty($_POST['status'])) ? $task['status'] : $_POST['status'];
+            $status = (empty($_POST['status'])) ? $task['status'] : 1;
             $text = $_POST['task'];
 
             if (!Site::checkTextMinSize($text)) {
