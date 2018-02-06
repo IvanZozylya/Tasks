@@ -60,17 +60,19 @@ class Image
     function resize($width, $height)
     {
 
-
         // Get current dimensions
-        $old_width  = $this->getWidth();
+        $old_width = $this->getWidth();
         $old_height = $this->getHeight();
 
+        if ($old_width <= $width && $old_height <= $height) {
+            return;
+        }
         // Calculate the scaling we need to do to fit the image inside our frame
-        $scale = min($width/$old_width, $height/$old_height);
+        $scale = min($width / $old_width, $height / $old_height);
 
         // Get the new dimensions1
-        $new_width  = ceil($scale*$old_width);
-        $new_height = ceil($scale*$old_height);
+        $new_width = ceil($scale * $old_width);
+        $new_height = ceil($scale * $old_height);
 
         $new_image = imagecreatetruecolor($new_width, $new_height);
         imagecopyresampled($new_image, $this->image, 0, 0, 0, 0, $new_width, $new_height, $this->getWidth(), $this->getHeight());

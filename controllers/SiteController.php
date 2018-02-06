@@ -103,6 +103,8 @@ class SiteController
             exit();
         }
 
+        $errors = [];
+
         //Проверяем правильный ли путь в url
         Site::urlVerify($params, "/");
 
@@ -116,10 +118,17 @@ class SiteController
             $status = (empty($_POST['status'])) ? $task['status'] : $_POST['status'];
             $text = $_POST['task'];
 
-            //Редактируем task
-            Site::editTask($status, $text, $id);
-            header("Location: /");
-            exit();
+            if (!Site::checkTextMinSize($text)) {
+                $errors[] = ('Incorrect task description: minimum number of letters is 2');
+            }
+
+            if (count($errors) == 0) {
+                //Редактируем task
+                Site::editTask($status, $text, $id);
+                header("Location: /");
+                exit();
+            }
+
 
         }
 

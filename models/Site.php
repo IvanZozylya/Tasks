@@ -130,7 +130,7 @@ class Site
     }
 
     //правильность email
-    private static function checkEmail($email)
+    public static function checkEmail($email)
     {
         if (self::cleanStr(filter_var($email, FILTER_VALIDATE_EMAIL))) {
             return true;
@@ -140,7 +140,7 @@ class Site
     }
 
     //правильность text, не короче 2 символов
-    private static function checkTextMinSize($text)
+    public static function checkTextMinSize($text)
     {
 
         if (strlen(self::cleanStr($text)) >= 2) {

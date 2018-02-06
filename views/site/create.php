@@ -76,18 +76,18 @@
 
                 <div class="container fullWidth">
 
-                    <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
+                    <div class="">
+                        <div class="col-md-6">
                             <label>User Name: </label>
-                            <br><input type="text" name="" id="create_name_US" disabled>
+                            <input type="text" class="fullWidth" id="create_name_US" disabled>
                         </div>
-                        <div class="form-group">
+                        <div class="col-md-6">
                             <label>Email: </label>
-                            <br><input type="email" name="" id="create_email_US" disabled>
+                            <input type="email" class="fullWidth" id="create_email_US" disabled>
                         </div>
 
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 vOffset">
                         <div class="form-group">
                             <label for="InputTask">Task</label>
                             <textarea class="form-control" name="task" id="create_task_US" rows="5" disabled></textarea>
@@ -116,7 +116,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-<script src="/template/js/createView.js"></script>
+<script src="/template/js/app.js"></script>
 
 </body>
 </html>
