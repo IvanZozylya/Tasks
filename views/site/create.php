@@ -59,11 +59,7 @@
             <div class="modal-body">
 
                 <div class="container fullWidth">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
-                            <img id="output_image" class="center-block"/>
-                        </div>
-                    </div>
+
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group">
                             <label>User Name: </label>
