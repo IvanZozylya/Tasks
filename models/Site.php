@@ -108,4 +108,80 @@ class Site
 
     }
 
+    //Проверка на формы на несоответствие или ошибки
+    public static function checkModelValidity($name, $email, $text, $filePath)
+    {
+        $errors = [];
+
+        if (!self::checkEmail($email)) {
+            $errors[] = ('Incorrect email');
+        }
+        if (!self::checkTextMinSize($name)) {
+            $errors[] = ('Incorrect name');
+        }
+        if (!self::checkTextMinSize($text)) {
+            $errors[] = ('Incorrect text');
+        }
+        if (!self::checkImage($filePath)) {
+            $errors[] = ("Incorrect image's format. Only png/jpeg/gif formats are supported");
+        }
+
+        return $errors;
+    }
+
+    //правильность email
+    private static function checkEmail($email)
+    {
+        if (self::cleanStr(filter_var($email, FILTER_VALIDATE_EMAIL))) {
+            return true;
+        }
+        return false;
+
+    }
+
+    //правильность text, не короче 2 символов
+    private static function checkTextMinSize($text)
+    {
+
+        if (strlen(self::cleanStr($text)) >= 2) {
+            return true;
+        }
+        return false;
+
+    }
+
+    //правильность Image
+    private static function checkImage($file)
+    {
+        $filePath = $file;
+
+        // Создадим ресурс FileInfo
+        $fi = finfo_open(FILEINFO_MIME_TYPE);
+
+        // Получим MIME-тип
+        $mime = (string)finfo_file($fi, $filePath);
+
+        // Проверим ключевое слово image (image/jpeg, image/png и т. д.)
+        if (strpos($mime, 'image') === false) {
+            return false;
+        }
+
+        return true;
+
+
+    }
+
+    //Валидация строки
+    private static function cleanStr($value)
+    {
+        $value = trim($value);
+        $value = stripslashes($value);
+        $value = strip_tags($value);
+        $value = htmlspecialchars($value);
+
+        return $value;
+
+    }
+
+
 }

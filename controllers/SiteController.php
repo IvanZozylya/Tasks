@@ -27,41 +27,66 @@ class SiteController
 
         //Валидация полей
         if (isset($_POST['submit'])) {
+
             $name = $_POST['userName'];
             $email = $_POST['email'];
             $text = $_POST['task'];
-            $img = '/template/image/' . $_FILES['userfile']['name'];
+            $filePath = $_FILES['userfile']['tmp_name'];
 
-            //Добавляем новую task в БД и получить ее id
-            if (!$last_id = Site::addNewTask($name, $email, $text)) {
-                header("Location: /");
-                exit();
-            };
+            $errors = Site::checkModelValidity($name, $email, $text, $filePath);
 
-            //Меняем название файла
-            $upload = explode(".", $_FILES['userfile']['name']);
-            $newFile = $last_id . ".$upload[1]";
-
-            //Путь к файлу
-            $uploadFile = ROOT . '/template/image/' . $newFile;
-
-            //Перемещаем файл
-            if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadFile)) {
-
-                //Новый путь к файлу в БД
-                $image = '/template/image/' . $newFile;
-
-                //Обновить путь image нужной tasks в БД
-                Site::editPathImage($last_id, $image);
-
-                //Переадресация на главную страницу
-                header("location: /");
+            if (count($errors) == 0) {
+                self::saveTaskToDB($name, $email, $text, $filePath);
             }
         }
 
-
         require_once(ROOT . '/views/site/create.php');
         return true;
+    }
+
+    private function saveTaskToDB($name, $email, $text, $filePath)
+    {
+        //Добавляем новую task в БД и получить ее id
+        if (!$last_id = Site::addNewTask($name, $email, $text)) {
+            header("Location: /");
+            exit();
+        };
+
+        $uploadFile = $this->saveImageToFileSystem($filePath, $last_id);
+
+        if ($uploadFile) {
+            //Обновить путь image нужной tasks в БД
+            Site::editPathImage($last_id, $uploadFile);
+
+            //Переадресация на главную страницу
+            header("location: /");
+        }
+
+    }
+
+    private function saveImageToFileSystem($filePath, $last_id)
+    {
+        //Меняем название файла
+        $image = getimagesize($filePath);
+        $extension = image_type_to_extension($image[2]);
+        $newFile = $last_id . "$extension";
+
+        //Перемещаем файл
+        $uploadFile = ROOT . '/template/image/' . $newFile;
+        $this->resizeImage($filePath, $uploadFile);
+
+        //Новый путь к файлу в БД
+        return '/template/image/' . $newFile;
+
+
+    }
+
+    private function resizeImage($filePath, $uploadFile)
+    {
+        $image = new Image();
+        $image->load($filePath);
+        $image->resize(320, 240);
+        $image->save($uploadFile);
     }
 
     //Редактирование tasks

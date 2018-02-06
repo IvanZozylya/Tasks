@@ -1,46 +1,62 @@
 <?php require_once ROOT . '/views/layouts/header.php'; ?>
+<div class="content container">
+    <?php if (isset($errors) && is_array($errors) && count($errors) > 0) : ?>
+        <div class="alert alert-danger col-md-12">
+            <ul>
+                <?php for ($i = 0; $i < count($errors); $i++) : ?>
 
-<form name="createTask" class="container content" enctype="multipart/form-data" method="post">
-    <div class="row">
-        <div class="col-md-5 col-sm-12">
-            <div class="form-group">
-                <img id="output_image" class="center-block"/>
-                <input type="file" accept="image/jpeg,image/png,image/gif" name="userfile" onchange="preview_image(event)" required>
-                <div class="alert alert-info vOffset">
-                    <strong>Info! </strong>Only jpg/gif/png formats are supported. Image can have dimensions up to
-                    320х240.
+                    <li><?php echo $errors[$i];?></li>
+
+                <?php endfor; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+
+    <form name="createTask" enctype="multipart/form-data" method="post">
+        <div class="row">
+            <div class="col-md-5 col-sm-12">
+                <div class="form-group">
+                    <img id="output_image" class="center-block"/>
+                    <input type="file" accept="image/jpeg,image/png,image/gif" name="userfile"
+                           onchange="preview_image(event)" required>
+                    <div class="alert alert-info vOffset">
+                        <strong>Info! </strong>Only jpg/gif/png formats are supported. Image can have dimensions up to
+                        320х240.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div class="form-group">
+                    <label for="userName">User Name</label>
+                    <input type="text" class="form-control" id="userName" name="userName" placeholder="User Name"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                 </div>
             </div>
         </div>
-        <div class="col-md-7 col-sm-12">
-            <div class="form-group">
-                <label for="userName">User Name</label>
-                <input type="text" class="form-control" id="userName" name="userName" placeholder="User Name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="task">Task</label>
+                    <textarea class="form-control" id="task" name="task" rows="5" placeholder="Task description"
+                              required></textarea>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="task">Task</label>
-                <textarea class="form-control" id="task" name="task" rows="5" placeholder="Task description"
-                          required></textarea>
-            </div>
+        <div class="pull-right">
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="preview_create">
+                Preview
+            </button>
+            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
         </div>
-    </div>
+    </form>
 
-    <div class="pull-right">
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="preview_create">
-            Preview
-        </button>
-        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-    </div>
-</form>
+</div>
 
 <footer class="container text-center">
     <p class="text-muted">© 2017-2018</p>
