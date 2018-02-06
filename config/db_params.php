@@ -7,7 +7,7 @@ return array(
         'User' => 'root',
         'password' => '',
 
- /*
+/*
         'host' => 'mysql.zzz.com.ua',
         'dbname' => 'ivanzozylya',
         'User' => 'Module4',

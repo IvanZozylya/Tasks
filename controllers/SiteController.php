@@ -28,9 +28,9 @@ class SiteController
         //Валидация полей
         if (isset($_POST['submit'])) {
 
-            $name = $_POST['userName'];
-            $email = $_POST['email'];
-            $text = $_POST['task'];
+            $name = Site::cleanStr($_POST['userName']);
+            $email = Site::cleanStr($_POST['email']);
+            $text = Site::cleanStr($_POST['task']);
             $filePath = $_FILES['userfile']['tmp_name'];
 
             $errors = Site::checkModelValidity($name, $email, $text, $filePath);
@@ -116,7 +116,7 @@ class SiteController
         if (isset($_POST['save'])) {
 
             $status = (empty($_POST['status'])) ? $task['status'] : 1;
-            $text = $_POST['task'];
+            $text = Site::cleanStr($_POST['task']);
 
             if (!Site::checkTextMinSize($text)) {
                 $errors[] = ('Incorrect task description: minimum number of letters is 2');

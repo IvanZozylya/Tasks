@@ -1,40 +1,39 @@
 <?php require_once ROOT . '/views/layouts/header.php'; ?>
-<div class="container content">
+<div class="content container">
     <?php if (isset($errors) && is_array($errors) && count($errors) > 0) : ?>
         <div class="alert alert-danger col-md-12">
             <ul>
                 <?php for ($i = 0; $i < count($errors); $i++) : ?>
 
-                    <li><?php echo $errors[$i]; ?></li>
+                    <li><?php echo $errors[$i];?></li>
 
                 <?php endfor; ?>
             </ul>
         </div>
     <?php endif; ?>
 
-    <form name="createTask"  enctype="multipart/form-data" method="post">
+    <form name="createTask" enctype="multipart/form-data" method="post">
         <div class="row">
             <div class="col-md-5 col-sm-12">
                 <div class="form-group">
-                    <img id="output_image" class="center-block" src="<?php echo $task['img']; ?>"/>
+                    <img id="output_image" class="center-block"/>
+                    <input type="file" accept="image/jpeg,image/png,image/gif" name="userfile"
+                           onchange="preview_image(event)" required>
+                    <div class="alert alert-info vOffset">
+                        <strong>Info! </strong>Only jpg/gif/png formats are supported. Image can have dimensions up to
+                        320х240.
+                    </div>
                 </div>
             </div>
             <div class="col-md-7 col-sm-12">
                 <div class="form-group">
                     <label for="userName">User Name</label>
-                    <input type="text" class="form-control" id="userName" name="userName"
-                           value="<?php echo $task['name']; ?>" disabled>
+                    <input type="text" class="form-control" id="userName" name="userName" placeholder="User Name"
+                           required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email"
-                           value="<?php echo $task['email']; ?>"
-                           disabled>
-                </div>
-                <div class="form-group">
-                    <label for="isCompleted">Completed: </label>
-                    <input type="checkbox" id="isCompleted" <?php if ($task['status'] != 0) echo "checked disabled"; ?>
-                           name="status" value="1">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                 </div>
             </div>
         </div>
@@ -44,15 +43,16 @@
                 <div class="form-group">
                     <label for="task">Task</label>
                     <textarea class="form-control" id="task" name="task" rows="5" placeholder="Task description"
-                              required><?php if(isset($_POST['save'])){echo $_POST['task'];} else{echo $task['text'];}?></textarea>
+                              required></textarea>
                 </div>
             </div>
         </div>
 
         <div class="pull-right">
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="preview">Preview
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="preview_create">
+                Preview
             </button>
-            <button type="submit" class="btn btn-primary" name="save">Submit</button>
+            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
         </div>
     </form>
 
@@ -75,26 +75,22 @@
             <div class="modal-body">
 
                 <div class="container fullWidth">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
-                            <img id="output_image" src="<?php echo $task['img']; ?>" class="center-block"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
+
+                    <div class="">
+                        <div class="col-md-6">
                             <label>User Name: </label>
-                            <br><span><?php echo $task['name']; ?></span>
+                            <input type="text" class="fullWidth" id="create_name_US" disabled>
                         </div>
-                        <div class="form-group">
+                        <div class="col-md-6">
                             <label>Email: </label>
-                            <br><span><?php echo $task['email']; ?></span>
+                            <input type="email" class="fullWidth" id="create_email_US" disabled>
                         </div>
 
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 vOffset">
                         <div class="form-group">
                             <label for="InputTask">Task</label>
-                            <textarea class="form-control" name="task" rows="5" id="usContent" disabled>Some big description.</textarea>
+                            <textarea class="form-control" name="task" id="create_task_US" rows="5" disabled></textarea>
                         </div>
                     </div>
                 </div>
@@ -106,10 +102,21 @@
 
     </div>
 </div>
-<script src="/template/js/previewEdit.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#preview_create").click(function () {
+            $("#create_name_US").val($("#userName").val());
+            $("#create_email_US").val($("#email").val());
+            $("#create_task_US").val($("#task").val());
+
+        });
+    });
+</script>
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+<script src="/template/js/app.js"></script>
+
 </body>
 </html>

@@ -29,11 +29,12 @@
                 <div class="form-group">
                     <label for="userName">User Name</label>
                     <input type="text" class="form-control" id="userName" name="userName" placeholder="User Name"
-                           required>
+                        value="<?if(isset($_POST['submit'])) echo $_POST['userName'];?>"   required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                           value="<?if(isset($_POST['submit'])) echo $_POST['email'];?>" required>
                 </div>
             </div>
         </div>
@@ -43,7 +44,7 @@
                 <div class="form-group">
                     <label for="task">Task</label>
                     <textarea class="form-control" id="task" name="task" rows="5" placeholder="Task description"
-                              required></textarea>
+                              required><?php if(isset($_POST['submit'])) echo $_POST['task'];?></textarea>
                 </div>
             </div>
         </div>

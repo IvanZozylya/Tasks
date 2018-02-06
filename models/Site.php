@@ -142,8 +142,7 @@ class Site
     //правильность text, не короче 2 символов
     public static function checkTextMinSize($text)
     {
-
-        if (strlen(self::cleanStr($text)) >= 2) {
+        if (mb_strlen(self::cleanStr($text)) >= 2) {
             return true;
         }
         return false;
@@ -172,12 +171,9 @@ class Site
     }
 
     //Валидация строки
-    private static function cleanStr($value)
+    public static function cleanStr($value)
     {
-        $value = trim($value);
-        $value = stripslashes($value);
-        $value = strip_tags($value);
-        $value = htmlspecialchars($value);
+        $value = trim(htmlspecialchars(strip_tags(stripslashes($value))));
 
         return $value;
 
